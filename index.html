@@ -13,7 +13,7 @@
         <div class=" bg-blue-50 text-center w-12/12 mx-auto mt-22 mb-22 p-12 align-center rounded-lg">
             <img class="mb-5 max-w-xm max-h-60  mx-auto" id="img-field" src="" alt="">
 
-            <h1 id="text-field" class="text-3xl font-semibold mb-5 w-12/12 mx-auto">Do you Love Me?</h1>
+            <h1 id="text-field" class="text-3xl font-semibold mb-5 ">Do you Love Me?</h1>
 
             <input id="input-field" class="block mx-auto mb-5 text-black px-4 py-2 rounded-lg" type="email" placeholder="type yes or no">
 
@@ -35,7 +35,7 @@
 
         document.getElementById('no-btn').addEventListener('click', function(){
             const textField =document.getElementById('text-field');
-            textField.innerText = 'So sad! It`s Okay!!';
+            textField.innerText = 'So sad! It`s Okay !!';
             const imageField = document.getElementById('img-field');
             imageField.innerText = imageField.src = 'images/sad2.png';
         })
