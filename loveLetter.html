@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <!-- tailwind link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="mt-12 mb-12">
+        <div class=" bg-blue-50 text-center w-9/12 mx-auto mt-22 mb-22 p-12 align-center rounded-lg">
+            <img class="mb-5 max-w-xm max-h-60  mx-auto" id="img-field" src="" alt="">
+
+            <h1 id="text-field" class="text-3xl font-semibold mb-5 w-2/4 mx-auto">Do you Love Me?</h1>
+
+            <input id="input-field" class="block mx-auto mb-5 text-black px-4 py-2 rounded-lg" type="email" placeholder="type yes or no">
+
+            <button id="yes-btn" class="bg-sky-400 hover:bg-sky-800 text-2xl text-white px-10 py-2 rounded-lg mb-5" disabled>Yes</button>
+
+            <button id="no-btn" class="bg-yellow-400 hover:bg-yellow-800 text-2xl text-white px-10 py-2 mb-3 rounded-lg" disabled>No</button>
+            <br>
+            <button id="previous-btn" class="bg-green-400 hover:bg-green-800 align-center text-2xl text-white px-6 py-2 rounded-lg">previous</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('yes-btn').addEventListener('click', function(event){
+            const textField = document.getElementById('text-field');
+            textField.innerText = 'I Love You Too';
+            const imageField = document.getElementById('img-field');
+            imageField.innerText = imageField.src = 'images/happy2.png';
+        });
+
+        document.getElementById('no-btn').addEventListener('click', function(){
+            const textField =document.getElementById('text-field');
+            textField.innerText = 'So sad! It`s Okay!!!!!';
+            const imageField = document.getElementById('img-field');
+            imageField.innerText = imageField.src = 'images/sad2.png';
+        })
+
+        const textFields = document.getElementById('input-field').addEventListener   ('keyup', function(event){
+        const text = event.target.value;
+        
+        const deleteButton = document.getElementById('yes-btn');
+        if(text === 'yes' || text === 'Yes' || text === 'YES'){
+            deleteButton.removeAttribute('disabled');
+        }
+            else {
+                deleteButton.setAttribute('disabled', true)
+        }
+        });
+
+        const textField = document.getElementById('input-field').addEventListener   ('keyup', function(event){
+        const text = event.target.value;
+        
+        const deleteButton = document.getElementById('no-btn');
+        if(text === 'no' || text === 'No' || text === 'NO'){
+            deleteButton.removeAttribute('disabled');
+        }
+            else {
+                deleteButton.setAttribute('disabled', true);
+                
+        }
+        });
+
+        document.getElementById('previous-btn').addEventListener('click', function(){
+            window.location.href = 'loveLetter.html';
+        })
+    </script>
+</body>
+</html>
